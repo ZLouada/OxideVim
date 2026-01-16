@@ -1,0 +1,5 @@
+{
+  "name": "OxideVim",
+  "description": "A specialized Rust development environment combining Vim-style editing with a transparent dependency graph. Features simulated Cargo toolchain.",
+  "requestFramePermissions": []
+}
