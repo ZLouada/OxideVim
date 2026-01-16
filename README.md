@@ -92,7 +92,7 @@ npm run dev
 **Using Command Prompt:**
 ```cmd
 REM 1. Clone the repository
-git clone https://github.com/yourusername/oxidevim.git
+git clone https://github.com/ZLouada/OxideVim.git
 cd oxidevim
 
 REM 2. Install dependencies
