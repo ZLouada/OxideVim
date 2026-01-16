@@ -65,20 +65,19 @@ Built-in simulated Cargo commands:
 
 Before installing OxideVim, ensure you have the following installed:
 
-| Software | Version | Linux | Windows |
-|----------|---------|-------|---------|
-| **Node.js** | ≥ 18.x | `sudo apt install nodejs` or via [nvm](https://github.com/nvm-sh/nvm) | [Download](https://nodejs.org/) or `winget install OpenJS.NodeJS` |
-| **npm** | ≥ 9.x | Included with Node.js | Included with Node.js |
-| **Git** | Latest | `sudo apt install git` | `winget install Git.Git` |
+| Software | Version | Linux (Debian/Ubuntu) | Arch Linux | Windows |
+|----------|---------|----------------------|------------|---------|
+| **Node.js** | ≥ 18.x | `sudo apt install nodejs` or via [nvm](https://github.com/nvm-sh/nvm) | `sudo pacman -S nodejs npm` | [Download](https://nodejs.org/) or `winget install OpenJS.NodeJS` |
+| **npm** | ≥ 9.x | Included with Node.js | Included with nodejs package | Included with Node.js |
+| **Git** | Latest | `sudo apt install git` | `sudo pacman -S git` | `winget install Git.Git` |
 
 ### Step-by-Step Installation
 
-#### 🐧 Linux
+#### 🐧 Linux (Debian/Ubuntu)
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/oxidevim.git
-cd oxidevim
+# 1. Navigate to the project directory
+cd /path/to/oxidevim
 
 # 2. Install dependencies
 npm install
@@ -87,13 +86,58 @@ npm install
 npm run dev
 ```
 
+**Or if cloning from a Git repository:**
+```bash
+# Replace with your actual repository URL
+git clone <your-repository-url>
+cd oxidevim
+npm install
+npm run dev
+```
+
+#### 🐧 Arch Linux
+
+```bash
+# 1. Install Node.js and npm
+sudo pacman -S nodejs npm
+
+# 2. (Optional) Install Git if not already installed
+sudo pacman -S git
+
+# 3. Navigate to the project directory
+cd /path/to/oxidevim
+
+# 4. Install dependencies
+npm install
+
+# 5. Start the development server
+npm run dev
+```
+
+**Using yay (AUR helper) for latest Node.js:**
+```bash
+# Install nvm from AUR for managing Node.js versions
+yay -S nvm
+
+# Load nvm
+source /usr/share/nvm/init-nvm.sh
+
+# Install latest LTS Node.js
+nvm install --lts
+nvm use --lts
+
+# Then install and run the project
+cd /path/to/oxidevim
+npm install
+npm run dev
+```
+
 #### 🪟 Windows
 
 **Using Command Prompt:**
 ```cmd
-REM 1. Clone the repository
-git clone https://github.com/ZLouada/OxideVim.git
-cd oxidevim
+REM 1. Navigate to the project directory
+cd C:\path\to\oxidevim
 
 REM 2. Install dependencies
 npm install
@@ -104,14 +148,22 @@ npm run dev
 
 **Using PowerShell:**
 ```powershell
-# 1. Clone the repository
-git clone https://github.com/yourusername/oxidevim.git
-cd oxidevim
+# 1. Navigate to the project directory
+cd C:\path\to\oxidevim
 
 # 2. Install dependencies
 npm install
 
 # 3. Start the development server
+npm run dev
+```
+
+**Or if cloning from a Git repository:**
+```cmd
+REM Replace with your actual repository URL
+git clone <your-repository-url>
+cd oxidevim
+npm install
 npm run dev
 ```
 
@@ -451,11 +503,18 @@ git config core.autocrlf true
 
 Contributions are welcome! Please follow these steps:
 
-1. **Fork** the repository
+1. **Fork** the repository (if hosted on GitHub/GitLab)
 2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
 3. **Commit** your changes: `git commit -m 'Add amazing feature'`
 4. **Push** to the branch: `git push origin feature/amazing-feature`
 5. **Open** a Pull Request
+
+**Note:** If you downloaded this project as a ZIP file, you can initialize a new Git repository:
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+```
 
 ### Development Guidelines
 
@@ -486,7 +545,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
 
 **Made with ❤️ and 🦀**
-
-[Report Bug](https://github.com/yourusername/oxidevim/issues) • [Request Feature](https://github.com/yourusername/oxidevim/issues)
 
 </div>
